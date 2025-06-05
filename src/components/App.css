@@ -51,6 +51,11 @@
   width: 72px;
 }
 
+.todo__add--button {
+  font-size: 52px;
+  color: #afafaf;
+}
+
 .todo__task {
   text-align: center;
   color: #666666;
@@ -61,6 +66,30 @@
 
 .todo__tasks {
   border-top: 1px solid #afafaf;
+}
+
+.todo__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  padding: 8px 0px;
+}
+
+.todo__items-left {
+  font-size: 20px;
+  min-width: 156px;
+  text-align: center;
+}
+
+.filter_button {
+  padding: 4px 12px;
+}
+
+.todo__clear-completed {
+  font-size: 20px;
+  text-align: right;
 }
 
 .todo__decoration--upper {

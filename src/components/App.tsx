@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Todo from "./components/Todo";
+import Todo from "./Todo";
 import { ChevronRight } from "lucide-react";
 
 function App() {
@@ -96,7 +96,15 @@ function App() {
             id="task"
             placeholder="What need to be done?"
           />
-          <button onClick={addTask}></button>
+          {inputTask.trim() && (
+            <button
+              className="todo__add--button"
+              onClick={addTask}
+              data-testid="add-button"
+            >
+              +
+            </button>
+          )}
         </div>
         {isTasksVisible && (
           <>
@@ -115,15 +123,13 @@ function App() {
               )}
             </div>
             {tasks.length > 0 && (
-              <div className="todo__footer flex flex-row justify-between items-center m-4 px-2">
-                <div className="text-xl min-w-[156px] text-center">
-                  {tasksLeft} items left
-                </div>
+              <div className="todo__footer">
+                <div className="todo__items-left">{tasksLeft} items left</div>
                 <div className="w-fit">
                   <div className="text-xl">
                     <button
                       onClick={() => setFilter("all")}
-                      className={`px-3 py-1  ${
+                      className={`filter_button  ${
                         filter === "all" ? " border-[1px] rounded-sm" : ""
                       }`}
                     >
@@ -131,7 +137,7 @@ function App() {
                     </button>
                     <button
                       onClick={() => setFilter("active")}
-                      className={`px-3 py-1 rounded-lg text-sm transition-colors ${
+                      className={`filter_button ${
                         filter === "active" ? " border-[1px] rounded-sm" : ""
                       }`}
                     >
@@ -139,7 +145,7 @@ function App() {
                     </button>
                     <button
                       onClick={() => setFilter("completed")}
-                      className={`px-3 py-1 rounded-lg text-sm transition-colors ${
+                      className={`filter_button ${
                         filter === "completed" ? " border-[1px] rounded-sm" : ""
                       }`}
                     >
@@ -147,7 +153,7 @@ function App() {
                     </button>
                   </div>
                 </div>
-                <div className="text-xl text-right">
+                <div className="todo__clear-completed">
                   <button onClick={clearCompleted}>Clear completed</button>
                 </div>
               </div>

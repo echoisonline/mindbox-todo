@@ -1,5 +1,4 @@
 import { Check } from "lucide-react";
-import React from "react";
 
 interface Task {
   id: number;
