@@ -17,7 +17,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": ["@testing-library/jest-dom"] // Add this to explicitly include jest-dom types
-  },
+    "types": ["@testing-library/jest-dom"]   },
   "include": ["src", "src/jest.d.ts", "src/setupTests.tsx"]
 }
